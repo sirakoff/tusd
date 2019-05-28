@@ -308,7 +308,7 @@ func (handler *UnroutedHandler) PostFile(w http.ResponseWriter, r *http.Request)
 
 	// Add the Location header directly after creating the new resource to even
 	// include it in cases of failure when an error is returned
-	url := handler.absFileURL(r, id)
+	url := handler.absFileURL(r, info.ID)
 	w.Header().Set("Location", url)
 
 	handler.Metrics.incUploadsCreated()
